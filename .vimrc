@@ -5,6 +5,20 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" NOTE: Make sure that you create the following directories
+" swap files (.swp) in a common location
+" // means use the file's full path
+set dir=~/.vim/_swap//
+
+" backup files (~) in a common location if possible
+set backup
+set backupdir=~/.vim/_backup/,~/tmp,.
+"
+" turn on undo files, put them in a common location
+set undofile
+set undodir=~/.vim/_undo/
+
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
