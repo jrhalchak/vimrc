@@ -49,7 +49,9 @@ Plugin 'easymotion/vim-easymotion'
 " based on the dependencies - example at  https://www.npmjs.com/package/eslint-config-airbnb
 " alternatively, you can add a script in here to detect local npms
 Plugin 'vim-syntastic/syntastic'
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = []
+autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc', '.;') !=# '' ? ['eslint'] : []
+
 let g:syntastic_disabled_filetypes = ['scss']
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
@@ -59,8 +61,16 @@ let g:syntastic_check_on_wq = 0
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
-Plugin 'isRuslan/vim-es6'
+
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'ternjs/tern_for_vim'
+
+Plugin 'isRuslan/vim-es6'
+Plugin 'mxw/vim-jsx'
+
+Plugin 'othree/html5.vim'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'dNitro/vim-pug-complete'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
